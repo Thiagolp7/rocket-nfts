@@ -1,0 +1,55 @@
+@import '_colors.scss';
+// @use '_utils.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  width: 100vw;
+  color: $text-color;
+  background-color: $body-background;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-weight: 700;
+}
+
+p {
+  color: $text-color;
+  font-size: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+
+span {
+  color: $color-logo;
+  font-size: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1275px;
+  margin: 0 auto;
+}

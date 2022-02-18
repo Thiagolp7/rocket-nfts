@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100vw;
+  color: #fff;
+  background-color: #0e0e0e;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-weight: 700;
+}
+
+p {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+span {
+  color: #ff5b50;
+  font-size: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 1275px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: 100rem;
+  padding: 5.7rem;
+  background: url(/assets/background.png);
+  background-size: 100%;
+}
+header .logo {
+  font-size: 4rem;
+  font-weight: 700;
+}
+header .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  margin-left: 20.3rem;
+  margin-right: 23.8rem;
+}
+header .nav .nav__item {
+  font-size: 1.8rem;
+}
+header .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7.2rem;
+  width: 100%;
+  display: flex;
+}
+header .info .info__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .info .info__left div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .info .info__center h1 {
+  font-size: 5rem;
+}
+/*# sourceMappingURL=styles.css.map */
