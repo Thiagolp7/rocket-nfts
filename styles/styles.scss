@@ -1,49 +1,177 @@
 @use '_globals.scss';
-@use '_colors.scss';
 @use '_utils.scss';
+@use '_colors.scss';
 
 header {
   width: 100%;
   height: 100rem;
-  padding: 5.7rem;
   background: url(/assets/background.png);
   background-size: 100%;
 
-  .logo {
-    font-size: 4rem;
-    font-weight: 700;
-  }
+  .menu {
+    @include utils.DisplayFlex(row, space-between, center);
+    margin-top: 5.7rem;
 
-  .nav {
-    @include utils.DisplayFlex(row, center, center);
-
-    gap: 6rem;
-    margin-left: 20.3rem;
-    margin-right: 23.8rem;
-
-    .nav__item {
-      font-size: 1.8rem;
+    .logo {
+      font-size: 4rem;
+      font-weight: 700;
     }
-  }
 
-  .info {
-    @include utils.DisplayFlex(row, center, center);
-    gap: 7.2rem;
-    width: 100%;
+    .nav {
+      @include utils.DisplayFlex(row, center, center);
 
-    display: flex;
+      gap: 0.5rem;
+      margin-left: 20.3rem;
+      margin-right: 23.8rem;
 
-    .info__left {
-      @include utils.DisplayFlex(column, center, center);
+      a {
+        font-size: 1.8rem;
+        transition: 0.2s ease-in;
+        padding: 1rem;
 
-      div {
-        @include utils.DisplayFlex(row, center, center);
+        &:hover {
+          transform: translateY(-0.5rem);
+          color: var(--color-logo);
+        }
       }
     }
 
-    .info__center {
+    button {
+      @include utils.DisplayFlex(row, space-between, center);
+      gap: 1.5rem;
+
+      padding: 1rem 1.5rem;
+
+      background: #fff;
+      font-size: 1.6rem;
+      font-weight: 700;
+      border: 0;
+
+      transition: 0.1s ease-in;
+
+      &:hover {
+        filter: brightness(0.9);
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+
+  .header-desc {
+    @include utils.DisplayFlex(row, space-between, center);
+    gap: 4rem;
+    width: 100%;
+
+    margin-top: 9rem;
+    margin-bottom: 10rem;
+
+    &__left {
+      p {
+        max-width: 40rem;
+        font-size: 1.8rem;
+      }
+
+      .artists {
+        @include utils.DisplayFlex(row, flex-start, center);
+        gap: 0.6rem;
+        margin-top: 5.5rem;
+
+        &__avatars {
+          position: relative;
+
+          img {
+            width: 16.9rem;
+            height: 8.6rem;
+          }
+        }
+
+        &__desc {
+          p:first-child {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &__center {
       h1 {
+        max-width: 59.6rem;
         font-size: 5rem;
+        font-weight: 700;
+      }
+    }
+
+    &__right {
+      img {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  margin-top: -45.6rem;
+
+  .galery {
+    @include utils.DisplayFlex(row, center, flex-end);
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    height: 45.6rem;
+
+    img {
+      width: 30.7rem;
+      height: 19.7rem;
+
+      border: solid 1px #fff;
+    }
+  }
+
+  .stats {
+    @include utils.DisplayFlex(row, center, center);
+    gap: 6.9rem;
+
+    &__left {
+      @include utils.DisplayFlex(column, center, center);
+      gap: 7rem;
+      div {
+        text-align: center;
+        font-weight: 600;
+
+        h3 {
+          font-size: 5rem;
+        }
+
+        p {
+          font-size: 2rem;
+          color: var(--subtitle-color);
+        }
+      }
+    }
+
+    &__right {
+      @include utils.DisplayFlex(column, center, center);
+
+      .stats-desc {
+        @include utils.DisplayFlex(row, center, center);
+
+        padding: 7.1rem 6.8rem;
+
+        div {
+          p {
+            max-width: 43.5rem;
+          }
+        }
+      }
+
+      img {
+        width: 115.8rem;
+        height: 30rem;
       }
     }
   }

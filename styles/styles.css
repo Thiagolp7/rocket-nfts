@@ -5,6 +5,13 @@
 }
 
 :root {
+  --body-background: #0e0e0e;
+  --color-logo: #ff5b50;
+  --card-color: #252525;
+  --text-color: #fff;
+  --subtitle-color: #5a5757;
+  --black-text: #000;
+  --color-input: #0d0d0d;
   font-size: 62.5%;
   font-family: "Montserrat", sans-serif;
 }
@@ -36,65 +43,176 @@ a {
   color: #fff;
 }
 
-span {
+span,
+u {
   color: #ff5b50;
   font-size: inherit;
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  max-width: 1275px;
+  max-width: 127.7rem;
   margin: 0 auto;
 }
 
 header {
   width: 100%;
   height: 100rem;
-  padding: 5.7rem;
   background: url(/assets/background.png);
   background-size: 100%;
 }
-header .logo {
+header .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5.7rem;
+}
+header .menu .logo {
   font-size: 4rem;
   font-weight: 700;
 }
-header .nav {
+header .menu .nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
+  gap: 0.5rem;
   margin-left: 20.3rem;
   margin-right: 23.8rem;
 }
-header .nav .nav__item {
+header .menu .nav a {
+  font-size: 1.8rem;
+  transition: 0.2s ease-in;
+  padding: 1rem;
+}
+header .menu .nav a:hover {
+  transform: translateY(-0.5rem);
+  color: var(--color-logo);
+}
+header .menu button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: 0;
+  transition: 0.1s ease-in;
+}
+header .menu button:hover {
+  filter: brightness(0.9);
+  transform: scale(1.05);
+}
+header .menu button img {
+  width: 3rem;
+  height: 3rem;
+}
+header .header-desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  margin-top: 9rem;
+  margin-bottom: 10rem;
+}
+header .header-desc__left p {
+  max-width: 40rem;
   font-size: 1.8rem;
 }
-header .info {
+header .header-desc__left .artists {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 5.5rem;
+}
+header .header-desc__left .artists__avatars {
+  position: relative;
+}
+header .header-desc__left .artists__avatars img {
+  width: 16.9rem;
+  height: 8.6rem;
+}
+header .header-desc__left .artists__desc p:first-child {
+  font-weight: 700;
+}
+header .header-desc__center h1 {
+  max-width: 59.6rem;
+  font-size: 5rem;
+  font-weight: 700;
+}
+header .header-desc__right img {
+  width: 20rem;
+  height: 20rem;
+}
+
+main {
+  width: 100%;
+  margin-top: -45.6rem;
+}
+main .galery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  height: 45.6rem;
+}
+main .galery img {
+  width: 30.7rem;
+  height: 19.7rem;
+  border: solid 1px #fff;
+}
+main .stats {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 7.2rem;
-  width: 100%;
-  display: flex;
+  gap: 6.9rem;
 }
-header .info .info__left {
+main .stats__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+main .stats__left div {
+  text-align: center;
+  font-weight: 600;
+}
+main .stats__left div h3 {
+  font-size: 5rem;
+}
+main .stats__left div p {
+  font-size: 2rem;
+  color: var(--subtitle-color);
+}
+main .stats__right {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-header .info .info__left div {
+main .stats__right .stats-desc {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 7.1rem 6.8rem;
 }
-header .info .info__center h1 {
-  font-size: 5rem;
+main .stats__right .stats-desc div p {
+  max-width: 43.5rem;
+}
+main .stats__right img {
+  width: 115.8rem;
+  height: 30rem;
 }
 /*# sourceMappingURL=styles.css.map */

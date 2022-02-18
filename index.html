@@ -11,49 +11,53 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Rocket NFTs</title>
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="menu container">
         <h2 class="logo">Rocket <span>NFTs</span></h2>
         <nav class="nav">
-          <a href="#buy" class="nav__item">Comprar NFT</a>
-          <a href="#about" class="nav__item">Sobre</a>
-          <a href="#faq" class="nav__item">FAQ</a>
-        </navclass>
-        <button>Metamask</button>
+          <a href="#buy">Comprar NFT</a>
+          <a href="#about">Sobre</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <button>
+          <img src="./assets/logo_MetaMask.svg" alt="metamask" />
+          Conectar carteira
+        </button>
       </div>
-      <section class="info">
-        <div class="info__left">
+      <section class="header-desc container">
+        <div class="header-desc__left">
           <p>
             Mercado digital para colecionáveis em criptos e tokens não fungível
             (NFT). Compre, venda e descubra ativos digitais exclusivos para
             você.
           </p>
-          <div class="selected-artists">
-            <img src="./assets/artista-1.png" alt="" />
-            <img src="./assets/artista-3.png" alt="" />
-            <img src="./assets/artista-6.png" alt="" />
-            <img src="./assets/artista-5.png" alt="" />
-            <div class="selected-artists__info">
+          <div class="artists">
+            <div class="artists__avatars">
+              <img src="./assets/group-avarts.png" alt="artistis avatars" />
+            </div>
+            <div class="artists__desc">
               <p>+10</p>
               <p>Artistas Selecionados</p>
             </div>
+          </div>
         </div>
-        <div class="info__center">
+        <div class="header-desc__center">
           <h1>
-            Descubra a verdadeira arte digital e colecione diversas <span>NFTs</span> 
+            Descubra a verdadeira arte digital e colecione diversas
+            <span>NFTs</span>
           </h1>
         </div>
-        <div class="info__right">
-          <img src="./assets/Badge.svg" alt="selo">
+        <div class="header-desc__right">
+          <img src="./assets/badge.svg" alt="badge" />
         </div>
       </section>
     </header>
     <main>
-      
-      <section>
+      <section class="galery container">
         <img src="./assets/galeria-1.png" alt="nft-01" />
         <img src="./assets/galeria-2.png" alt="nft-01" />
         <img src="./assets/galeria-3.png" alt="nft-01" />
@@ -63,8 +67,8 @@
         <img src="./assets/galeria-7.png" alt="nft-01" />
         <img src="./assets/galeria-8.png" alt="nft-01" />
       </section>
-      <section>
-        <div>
+      <section class="stats container">
+        <div class="stats__left">
           <div>
             <h3>10K+</h3>
             <p>Artes</p>
@@ -78,27 +82,29 @@
             <p>Artistas</p>
           </div>
         </div>
-        <div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue
-              malesuada amet pretium lacus. Id potenti diam et cras odio
-              viverra. Amet, velit ut hac sit. Enim ultricies mauris mattis nunc
-              semper.
-            </p>
-            <p>Lorem ipsum</p>
+        <div class="stats__right">
+          <div class="stats-desc">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue
+                malesuada amet pretium lacus. Id <u> potenti diam </u> et cras
+                odio viverra. Amet, velit ut hac sit. Enim ultricies mauris
+                mattis nunc semper.
+              </p>
+              <p>Lorem ipsum</p>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue
+                malesuada amet pretium lacus. Id <span> potenti diam </span> et
+                cras odio viverra. Amet, velit ut hac sit. Enim ultricies mauris
+                mattis nunc semper.
+              </p>
+              <p>Lorem ipsum</p>
+            </div>
           </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue
-              malesuada amet pretium lacus. Id potenti diam et cras odio
-              viverra. Amet, velit ut hac sit. Enim ultricies mauris mattis nunc
-              semper.
-            </p>
-            <p>Lorem ipsum</p>
-          </div>
+          <img src="./assets/banner.png" alt="banner" class="banner" />
         </div>
-        <img src="./assets/banner.jpg" alt="banner" class="banner" />
       </section>
       <section>
         <h2>Melhores <span>artistas</span></h2>
