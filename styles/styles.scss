@@ -5,12 +5,13 @@
 header {
   width: 100%;
   height: 100rem;
-  background: url(/assets/background.png);
+  background: url(/assets/background.png) no-repeat;
+  background-position: top;
   background-size: 100%;
 
   .menu {
     @include utils.DisplayFlex(row, space-between, center);
-    margin-top: 5.7rem;
+    padding-top: 5.7rem;
 
     .logo {
       font-size: 4rem;
@@ -20,7 +21,7 @@ header {
     .nav {
       @include utils.DisplayFlex(row, center, center);
 
-      gap: 0.5rem;
+      gap: 3rem;
       margin-left: 20.3rem;
       margin-right: 23.8rem;
 
@@ -31,7 +32,7 @@ header {
 
         &:hover {
           transform: translateY(-0.5rem);
-          color: var(--color-logo);
+          color: colors.$color-logo;
         }
       }
     }
@@ -46,12 +47,13 @@ header {
       font-size: 1.6rem;
       font-weight: 700;
       border: 0;
+      border-radius: 3px;
 
       transition: 0.1s ease-in;
 
       &:hover {
         filter: brightness(0.9);
-        transform: scale(1.05);
+        transform: scale(0.98);
       }
 
       img {
@@ -91,6 +93,7 @@ header {
 
         &__desc {
           p:first-child {
+            color: colors.$color-logo;
             font-weight: 700;
           }
         }
@@ -109,6 +112,17 @@ header {
       img {
         width: 20rem;
         height: 20rem;
+
+        animation: rotate 30s linear infinite;
+
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(-360deg);
+          }
+        }
       }
     }
   }
@@ -116,13 +130,13 @@ header {
 
 main {
   width: 100%;
-  margin-top: -45.6rem;
 
   .galery {
+    margin-top: -45.6rem;
     @include utils.DisplayFlex(row, center, flex-end);
     flex-wrap: wrap;
     gap: 1.6rem;
-    height: 45.6rem;
+    // height: 45.6rem;
 
     img {
       width: 30.7rem;
@@ -133,12 +147,19 @@ main {
   }
 
   .stats {
-    @include utils.DisplayFlex(row, center, center);
-    gap: 6.9rem;
+    width: 100%;
+    border-bottom: 1px solid colors.$subtitle-color;
+
+    .container {
+      @include utils.DisplayFlex(row, center, center);
+      gap: 6.8rem;
+    }
 
     &__left {
-      @include utils.DisplayFlex(column, center, center);
+      @include utils.DisplayFlex(column, center, flex);
       gap: 7rem;
+      width: 20rem;
+
       div {
         text-align: center;
         font-weight: 600;
@@ -149,29 +170,384 @@ main {
 
         p {
           font-size: 2rem;
-          color: var(--subtitle-color);
+          color: colors.$color-logo;
         }
       }
     }
 
     &__right {
       @include utils.DisplayFlex(column, center, center);
+      border-left: 1px solid colors.$subtitle-color;
 
+      width: 100%;
       .stats-desc {
         @include utils.DisplayFlex(row, center, center);
-
-        padding: 7.1rem 6.8rem;
+        gap: 12.6rem;
 
         div {
+          margin: 7.1rem 0;
+
           p {
             max-width: 43.5rem;
+
+            & + p {
+              margin-top: 6.3rem;
+
+              u {
+                color: #fff;
+              }
+            }
           }
+        }
+        div:first-child {
+          margin-left: 6.8rem;
         }
       }
 
       img {
-        width: 115.8rem;
-        height: 30rem;
+        width: 104.8rem;
+        height: 27.1rem;
+      }
+    }
+  }
+
+  .week-treending {
+    @include utils.DisplayFlex(column, center, center);
+    width: 100%;
+    margin-top: 15.1rem;
+
+    // background-color: red;
+
+    h2 {
+      font-size: 5rem;
+      font-weight: 700;
+    }
+
+    .card-container {
+      width: 100%;
+      margin-top: 12rem;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+      gap: 11.1rem;
+
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        width: 300px;
+        height: 1px;
+        background-color: colors.$subtitle-color;
+      }
+
+      .card {
+        max-width: 35rem;
+        cursor: pointer;
+
+        &__title {
+          @include utils.DisplayFlex(row, space-between, center);
+          h2 {
+            font-size: 3rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+          }
+
+          img {
+            width: 2.5rem;
+            height: 2.5rem;
+            filter: invert(34%) sepia(8%) saturate(487%) hue-rotate(218deg)
+              brightness(91%) contrast(84%);
+
+            transition: 0.3s ease;
+          }
+        }
+
+        &__desc {
+          @include utils.DisplayFlex(row, space-between, center);
+          margin: 2rem 0 1rem 0;
+
+          p {
+            font-size: 2rem;
+            font-weight: 600;
+            color: colors.$subtitle-color;
+            transition: 0.3s ease;
+          }
+
+          span {
+            font-size: 2rem;
+          }
+        }
+
+        &__img {
+          width: 100%;
+          overflow: hidden;
+
+          img {
+            width: 35rem;
+            transition: 1s ease;
+          }
+        }
+
+        &:hover {
+          .card__title {
+            h2 {
+              color: colors.$color-logo;
+              transform: translateX(10px);
+            }
+
+            img {
+              transform: translate(5px, -3px);
+              filter: initial;
+            }
+          }
+
+          .card__desc {
+            p {
+              color: #fff;
+            }
+          }
+
+          .card__img {
+            img {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .best-artists {
+    @include utils.DisplayFlex(column, center, center);
+    width: 100%;
+    margin-top: 15.1rem;
+
+    h2 {
+      font-size: 5rem;
+      font-weight: 700;
+    }
+
+    .card-container {
+      @include utils.DisplayFlex(row, center, center);
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 11.1rem;
+      margin-top: 12rem;
+
+      .card {
+        @include utils.DisplayFlex(row, center, center);
+        gap: 4rem;
+
+        width: 35rem;
+        height: 15rem;
+
+        background: colors.$card-color;
+        padding: 2.5rem 3.2rem;
+        border-radius: 3px;
+
+        cursor: pointer;
+
+        &:hover {
+          background: colors.$color-logo;
+
+          p {
+            color: #fff;
+          }
+        }
+
+        img {
+          width: 9.56rem;
+        }
+
+        div {
+          font-size: 2rem;
+          font-weight: 500;
+
+          p {
+            margin-top: 1rem;
+            color: colors.$color-logo;
+          }
+        }
+      }
+    }
+
+    a {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 6.3rem 0 15.6rem 0;
+      transition: 0.2s ease;
+
+      img {
+        margin-left: 1.6rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        transition: 0.2s ease;
+      }
+
+      &:hover {
+        color: colors.$color-logo;
+        filter: brightness(0.8);
+        img {
+          transform: translate(5px, -3px);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(81deg)
+            brightness(106%) contrast(101%);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background: colors.$card-color;
+
+  .footer-title {
+    padding: 3rem 0;
+    border-bottom: 1px solid colors.$subtitle-color;
+
+    div {
+      @include utils.DisplayFlex(row, space-between, center);
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      a {
+        cursor: pointer;
+        background: colors.$color-logo;
+        padding: 2rem;
+        border-radius: 3px;
+
+        transition: 0.1s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+
+  .footer-info {
+    @include utils.DisplayFlex(row, space-between, center);
+
+    &__left {
+      padding: 6rem 6.2rem 6rem 0;
+      border-right: 1px solid colors.$subtitle-color;
+
+      form {
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 500;
+        }
+
+        div {
+          position: relative;
+          margin-top: 2.5rem;
+
+          input {
+            padding: 2rem;
+            padding-right: 13rem;
+            color: #fff;
+            background: colors.$color-input;
+            border: 0;
+            font-size: 1.8rem;
+            border-radius: 3px;
+          }
+
+          input::placeholder {
+            color: colors.$subtitle-color;
+            font-size: 1.8rem;
+          }
+
+          input:focus {
+            outline: 2px solid colors.$color-logo;
+          }
+
+          button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+            color: #fff;
+            background: colors.$color-logo;
+            border: 0;
+            padding: 0 2.5rem;
+
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-radius: 0 3px 3px 0;
+
+            &:hover {
+              filter: brightness(0.9);
+            }
+          }
+        }
+      }
+    }
+
+    &__right {
+      @include utils.DisplayFlex(row, center, center);
+      gap: 12.8rem;
+      width: 100%;
+
+      ul {
+        font-size: 1.8rem;
+
+        li {
+          list-style: none;
+          color: colors.$subtitle-color;
+
+          h3 {
+            color: #fff;
+          }
+
+          & + li {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-socials {
+    padding: 3rem 0;
+    border-top: 1px solid colors.$subtitle-color;
+
+    a {
+      color: colors.$subtitle-color;
+      font-size: 2rem;
+      transition: 0.2s ease;
+      &:hover {
+        color: colors.$color-logo;
+        transform: scale(1.05);
+      }
+    }
+
+    div {
+      @include utils.DisplayFlex(row, space-between, center);
+
+      .socials-links {
+        a {
+          transition: 0.2s ease;
+
+          &:hover {
+            img {
+              filter: invert(60%) sepia(41%) saturate(6141%) hue-rotate(329deg)
+                brightness(100%) contrast(101%);
+            }
+            transform: scale(1.05);
+          }
+
+          & + a {
+            margin-left: 5rem;
+          }
+        }
       }
     }
   }
