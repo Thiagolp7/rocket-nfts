@@ -16,47 +16,53 @@
   </head>
   <body>
     <header>
-      <div class="menu container" id="menu">
-        <h2 class="logo">Rocket <span>NFTs</span></h2>
-        <nav class="nav">
-          <a href="#buy">Comprar NFT</a>
-          <a href="#about">Sobre</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-        <button>
-          <img src="./assets/logo_MetaMask.svg" alt="metamask" />
-          Conectar carteira
-        </button>
+      <div class="menu" id="menu">
+        <div class="container">
+          <h2 class="logo">Rocket <span>NFTs</span></h2>
+          <nav class="nav">
+            <a href="#buy">Comprar NFT</a>
+            <a href="#about">Sobre</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <button>
+            <img src="./assets/logo_MetaMask.svg" alt="metamask" />
+            Conectar carteira
+          </button>
+        </div>
       </div>
-      <section class="header-desc container">
-        <div class="header-desc__left">
-          <p>
-            Mercado digital para colecionáveis em criptos e tokens não fungível
-            (NFT). Compre, venda e descubra ativos digitais exclusivos para
-            você.
-          </p>
-          <div class="artists">
-            <div class="artists__avatars">
-              <img src="./assets/group-avarts.png" alt="artistis avatars" />
-            </div>
-            <div class="artists__desc">
-              <p>+10</p>
-              <p>Artistas Selecionados</p>
+      <section class="header-desc">
+        <div class="container">
+          <div class="header-desc__left">
+            <p>
+              Mercado digital para colecionáveis em criptos e tokens não
+              fungível (NFT). Compre, venda e descubra ativos digitais
+              exclusivos para você.
+            </p>
+            <a href="#best-artists">
+              <div class="artists">
+                <img
+                  class="artists__avatars"
+                  src="./assets/group-avarts.png"
+                  alt="artistis avatars"
+                />
+                <div class="artists__desc">
+                  <p>+10</p>
+                  <p>Artistas Selecionados</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="header-desc__center">
+            <h1>
+              Descubra a verdadeira arte digital e colecione diversas
+              <span>NFTs</span>
+            </h1>
+            <div class="header-badge">
+              <img src="./assets/badge.svg" alt="badge" />
             </div>
           </div>
         </div>
-        <div class="header-desc__center">
-          <h1>
-            Descubra a verdadeira arte digital e colecione diversas
-            <span>NFTs</span>
-          </h1>
-        </div>
-        <div class="header-desc__right">
-          <img src="./assets/badge.svg" alt="badge" />
-        </div>
       </section>
-    </header>
-    <main>
       <section class="galery container">
         <img src="./assets/galeria-1.png" alt="nft-01" />
         <img src="./assets/galeria-2.png" alt="nft-02" />
@@ -67,6 +73,8 @@
         <img src="./assets/galeria-7.png" alt="nft-07" />
         <img src="./assets/galeria-8.png" alt="nft-08" />
       </section>
+    </header>
+    <main>
       <section class="stats">
         <div class="container">
           <div class="stats__left">
@@ -104,120 +112,126 @@
                 <p><u>Lorem ipsum</u></p>
               </div>
             </div>
-            <img src="./assets/banner.png" alt="banner" class="banner" />
-          </div>
-        </div>
-      </section>
-      <section class="week-treending container" id="week-treending">
-        <h2><span>Populares</span> da semana</h2>
-        <div class="card-container">
-          <div class="card">
-            <div class="card__title">
-              <h2>Austronauta 1</h2>
-              <img src="./assets/arrow-white.svg" alt="seta" />
-            </div>
-            <div class="card__desc">
-              <p>Mayk Brito</p>
-              <span>6.50 RKT</span>
-            </div>
-            <div class="card__img">
-              <img src="./assets/galeria-1.png" alt="artista" />
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__title">
-              <h2>Austronauta 2</h2>
-              <img src="./assets/arrow-white.svg" alt="seta" />
-            </div>
-            <div class="card__desc">
-              <p>Jakeliny Gracielly</p>
-              <span>3.59 RKT</span>
-            </div>
-            <div class="card__img">
-              <img src="./assets/galeria-8.png" alt="artista" />
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__title">
-              <h2>Austronauta 3</h2>
-              <img src="./assets/arrow-white.svg" alt="seta" />
-            </div>
-            <div class="card__desc">
-              <p>João Inácio (Biro)</p>
-              <span>2.45 RKT</span>
-            </div>
-            <div class="card__img">
-              <img src="./assets/galeria-3.png" alt="artista" />
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__title">
-              <h2>Austronauta 4</h2>
-              <img src="./assets/arrow-white.svg" alt="seta" />
-            </div>
-            <div class="card__desc">
-              <p>Tamires Santos</p>
-              <span>1.50 RKT</span>
-            </div>
-            <div class="card__img">
-              <img src="./assets/galeria-5.png" alt="artista" />
+            <div class="stats__banner">
+              <img src="./assets/banner.png" alt="banner" class="banner" />
             </div>
           </div>
         </div>
       </section>
-      <section class="best-artists container">
-        <h2>Melhores <span>artistas</span></h2>
-        <div class="card-container">
-          <div class="card">
-            <img src="./assets/artista-1.png" alt="artista" />
-            <div>
-              <h3>Mayk Brito</h3>
-              <p>80 Fotografias</p>
+      <section class="week-treending" id="week-treending">
+        <div class="container">
+          <h2><span>Populares</span> da semana</h2>
+          <div class="card-container">
+            <div class="card">
+              <div class="card__title">
+                <h2>Austronauta 1</h2>
+                <img src="./assets/arrow-white.svg" alt="seta" />
+              </div>
+              <div class="card__desc">
+                <p>Mayk Brito</p>
+                <span>6.50 RKT</span>
+              </div>
+              <div class="card__img">
+                <img src="./assets/galeria-1.png" alt="artista" />
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="./assets/artista-2.png" alt="artista" />
-            <div>
-              <h3>Jakeliny G.</h3>
-              <p>99 Fotografias</p>
+
+            <div class="card">
+              <div class="card__title">
+                <h2>Austronauta 2</h2>
+                <img src="./assets/arrow-white.svg" alt="seta" />
+              </div>
+              <div class="card__desc">
+                <p>Jakeliny Gracielly</p>
+                <span>3.59 RKT</span>
+              </div>
+              <div class="card__img">
+                <img src="./assets/galeria-8.png" alt="artista" />
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="./assets/artista-3.png" alt="artista" />
-            <div>
-              <h3>João I.(Biro)</h3>
-              <p>50 Fotografias</p>
+
+            <div class="card">
+              <div class="card__title">
+                <h2>Austronauta 3</h2>
+                <img src="./assets/arrow-white.svg" alt="seta" />
+              </div>
+              <div class="card__desc">
+                <p>João Inácio (Biro)</p>
+                <span>2.45 RKT</span>
+              </div>
+              <div class="card__img">
+                <img src="./assets/galeria-3.png" alt="artista" />
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="./assets/artista-4.png" alt="artista" />
-            <div>
-              <h3>Tamires Santos</h3>
-              <p>43 Fotografias</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/artista-5.png" alt="artista" />
-            <div>
-              <h3>Ana Silva</h3>
-              <p>28 Fotografias</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/artista-6.png" alt="artista" />
-            <div>
-              <h3>Diego F.</h3>
-              <p>20 Fotografias</p>
+
+            <div class="card">
+              <div class="card__title">
+                <h2>Austronauta 4</h2>
+                <img src="./assets/arrow-white.svg" alt="seta" />
+              </div>
+              <div class="card__desc">
+                <p>Tamires Santos</p>
+                <span>1.50 RKT</span>
+              </div>
+              <div class="card__img">
+                <img src="./assets/galeria-5.png" alt="artista" />
+              </div>
             </div>
           </div>
         </div>
-        <a href="#week-treending"
-          >Veja todos artistas
-          <img src="./assets/arrow-orange.svg" alt="seta laranja" />
-        </a>
+      </section>
+      <section class="best-artists" id="best-artists">
+        <div class="container">
+          <h2>Melhores <span>artistas</span></h2>
+          <div class="card-container">
+            <div class="card">
+              <img src="./assets/artista-1.png" alt="artista" />
+              <div>
+                <h3>Mayk Brito</h3>
+                <p>80 Fotografias</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assets/artista-2.png" alt="artista" />
+              <div>
+                <h3>Jakeliny G.</h3>
+                <p>99 Fotografias</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assets/artista-3.png" alt="artista" />
+              <div>
+                <h3>João I.(Biro)</h3>
+                <p>50 Fotografias</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assets/artista-4.png" alt="artista" />
+              <div>
+                <h3>Tamires Santos</h3>
+                <p>43 Fotografias</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assets/artista-5.png" alt="artista" />
+              <div>
+                <h3>Ana Silva</h3>
+                <p>28 Fotografias</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assets/artista-6.png" alt="artista" />
+              <div>
+                <h3>Diego F.</h3>
+                <p>20 Fotografias</p>
+              </div>
+            </div>
+          </div>
+          <a href="#week-treending"
+            >Veja todos artistas
+            <img src="./assets/arrow-orange.svg" alt="seta laranja" />
+          </a>
+        </div>
       </section>
     </main>
     <footer>
@@ -234,7 +248,7 @@
           <form method="post">
             <label for="subscribe">
               <h2>
-                Fique por dentro de <br />
+                Fique por dentro de
                 <span>todas as novidades</span>
               </h2>
             </label>
@@ -251,28 +265,28 @@
         <div class="footer-info__right">
           <ul>
             <li><h3>Empresa</h3></li>
-            <li>Sobre</li>
-            <li>Serviços</li>
-            <li>Time</li>
-            <li>Carreira</li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Time</a></li>
+            <li><a href="#">Carreira</a></li>
           </ul>
           <ul>
             <li><h3>Mapa</h3></li>
-            <li>Galeria</li>
-            <li>Populares</li>
-            <li>Vendas</li>
-            <li>Contato</li>
+            <li><a href="#">Galeria</a></li>
+            <li><a href="#">Populares</a></li>
+            <li><a href="#">Vendas</a></li>
+            <li><a href="#">Contato</a></li>
           </ul>
           <ul>
             <li><h3>Links</h3></li>
-            <li>FAQs</li>
-            <li>Termos</li>
-            <li>Politica</li>
-            <li>Ajuda</li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Termos</a></li>
+            <li><a href="#">Politica</a></li>
+            <li><a href="#">Ajuda</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-socials">
+      <div class="footer-socials" id="footer">
         <div class="container">
           <a href="https://www.rocketseat.com.br" target="_blank">
             www.rocketseat.com.br
