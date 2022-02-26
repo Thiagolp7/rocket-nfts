@@ -58,25 +58,32 @@ u {
 
 header {
   width: 100%;
-  background: no-repeat center url("../assets/background.png");
+  background-image: url("../assets/background.png");
   background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 header .menu .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5.7rem;
+  padding-top: 5rem;
+  gap: 5rem;
+  position: relative;
 }
 header .menu .logo {
   font-size: 4rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 header .menu .nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  max-width: 815px;
+  width: 100%;
   gap: 3rem;
 }
 header .menu .nav a {
@@ -88,12 +95,13 @@ header .menu .nav a:hover {
   transform: translateY(-0.5rem);
   color: #ff5b50;
 }
-header .menu button {
+header .menu .nav button[type=button] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  margin-left: auto;
   padding: 1rem 1.5rem;
   background: #fff;
   font-size: 1.6rem;
@@ -102,13 +110,211 @@ header .menu button {
   border-radius: 3px;
   transition: 0.1s ease-in;
 }
-header .menu button:hover {
+header .menu .nav button[type=button]:hover {
   filter: brightness(0.9);
   transform: scale(0.98);
 }
-header .menu button img {
+header .menu .nav button[type=button] img {
   width: 3rem;
   height: 3rem;
+}
+header .menu .menu-hamburguer {
+  width: 40px;
+  height: 50px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  display: none;
+}
+header .menu .menu-hamburguer div {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+header .menu .menu-hamburguer div:nth-child(2) {
+  width: 70%;
+}
+header .menu .menu-hamburguer div:nth-child(3) {
+  width: 40%;
+}
+header .menu .menu-hamburguer div + div {
+  margin-top: 6px;
+}
+header .menu .menu-hamburguer.active div:nth-child(2) {
+  -webkit-animation: disapear 0.5s forwards;
+          animation: disapear 0.5s forwards;
+}
+header .menu .menu-hamburguer.active div:nth-child(1) {
+  -webkit-animation: rotateR 0.5s forwards;
+          animation: rotateR 0.5s forwards;
+}
+header .menu .menu-hamburguer.active div:nth-child(3) {
+  -webkit-animation: rotateL 0.5s forwards;
+          animation: rotateL 0.5s forwards;
+}
+@-webkit-keyframes disapear {
+  0% {
+    width: 70%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes disapear {
+  0% {
+    width: 70%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@-webkit-keyframes rotateR {
+  0% {
+    position: absolute;
+    top: 0%;
+  }
+  90% {
+    position: absolute;
+    top: 50%;
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    transform: rotate(45deg) translate(5%, -20%);
+    background-color: #ff5b50;
+  }
+}
+@keyframes rotateR {
+  0% {
+    position: absolute;
+    top: 0%;
+  }
+  90% {
+    position: absolute;
+    top: 50%;
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    transform: rotate(45deg) translate(5%, -20%);
+    background-color: #ff5b50;
+  }
+}
+@-webkit-keyframes rotateL {
+  0% {
+    position: absolute;
+    width: 40%;
+    top: 100%;
+  }
+  90% {
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+  }
+  100% {
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    transform: rotate(-45deg) translate(0%, 50%);
+    background-color: #ff5b50;
+  }
+}
+@keyframes rotateL {
+  0% {
+    position: absolute;
+    width: 40%;
+    top: 100%;
+  }
+  90% {
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+  }
+  100% {
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    transform: rotate(-45deg) translate(0%, 50%);
+    background-color: #ff5b50;
+  }
+}
+@media screen and (max-width: 940px) {
+  header .menu .logo {
+    font-size: 3rem;
+  }
+  header .menu .nav {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    position: absolute;
+    z-index: 99;
+    top: 10rem;
+    right: calc(3rem + 40px);
+    border-radius: 5px;
+    background: #333;
+    gap: 0;
+    display: none;
+    transition: 2s ease;
+  }
+  header .menu .nav a {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  header .menu .nav a + a {
+    margin: 0;
+    border-top: 1px solid #5a5757;
+  }
+  header .menu .nav a:nth-child(3) {
+    border-bottom: 1px solid #5a5757;
+  }
+  header .menu .nav button[type=button] {
+    margin: 0;
+    width: 100%;
+    white-space: nowrap;
+  }
+  header .menu .nav.active {
+    display: flex;
+    -webkit-animation: menuAppear 0.3s forwards;
+            animation: menuAppear 0.3s forwards;
+  }
+  @-webkit-keyframes menuAppear {
+    0% {
+      width: 0;
+      height: 0;
+    }
+    100% {
+      width: 20.4rem;
+      height: 23.9rem;
+    }
+  }
+  @keyframes menuAppear {
+    0% {
+      width: 0;
+      height: 0;
+    }
+    100% {
+      width: 20.4rem;
+      height: 23.9rem;
+    }
+  }
+  header .menu .menu-hamburguer {
+    display: flex;
+  }
 }
 header .header-desc {
   width: 100%;
@@ -196,6 +402,41 @@ header .header-desc__center h1 {
   max-width: 59.6rem;
   font-size: 5rem;
   font-weight: 700;
+  position: relative;
+}
+header .header-desc__center h1::after {
+  content: "";
+  width: 3px;
+  height: 3.8rem;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: -8px;
+  margin-left: 5px;
+  transform: translateY(-50%);
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+@media screen and (max-width: 480px) {
+  header .header-desc__center h1::after {
+    height: 2.6rem;
+    bottom: -6px;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 header .header-desc__center .header-badge img {
   width: 20rem;
@@ -224,51 +465,51 @@ header .header-desc__center .header-badge img {
     flex-direction: column;
     margin-bottom: 6rem;
   }
-  header .header-desc .header-desc__left {
+  header .header-desc__left {
     width: 100%;
     align-items: center;
   }
-  header .header-desc .header-desc__left p {
+  header .header-desc__left p {
     max-width: 80%;
   }
-  header .header-desc .header-desc__center {
+  header .header-desc__center {
     margin-top: 3rem;
     justify-content: center;
     flex-direction: column;
   }
-  header .header-desc .header-desc__center h1 {
+  header .header-desc__center h1 {
     font-size: 5rem;
     text-align: center;
   }
-  header .header-desc .header-desc__center .header-badge img {
+  header .header-desc__center .header-badge img {
     width: 20rem;
     height: 20rem;
   }
 }
 @media screen and (max-width: 480px) {
-  header .header-desc .header-desc__left {
+  header .header-desc__left {
     align-items: start;
   }
-  header .header-desc .header-desc__left p {
+  header .header-desc__left p {
     max-width: 100%;
   }
-  header .header-desc .header-desc__left .artists {
+  header .header-desc__left .artists {
     gap: 1rem;
   }
-  header .header-desc .header-desc__left .artists .artists__avatars {
+  header .header-desc__left .artists .artists__avatars {
     width: calc(16.9rem - 20%);
     height: calc(8.6rem - 20%);
   }
-  header .header-desc .header-desc__center {
+  header .header-desc__center {
     margin-top: 3rem;
     justify-content: center;
     flex-direction: column;
   }
-  header .header-desc .header-desc__center h1 {
+  header .header-desc__center h1 {
     font-size: 3rem;
     text-align: center;
   }
-  header .header-desc .header-desc__center .header-badge img {
+  header .header-desc__center .header-badge img {
     width: 15rem;
     height: 15rem;
   }
@@ -359,70 +600,67 @@ main .stats__right .stats__banner img {
     padding-top: 6rem;
     gap: 0;
   }
-  main .stats .stats__left {
+  main .stats__left {
     flex-direction: row;
   }
-  main .stats .stats__right {
+  main .stats__right {
     margin-top: 6rem;
     border-left: none;
     border-top: 1px solid #5a5757;
   }
-  main .stats .stats__right .stats-desc {
+  main .stats__right .stats-desc {
     padding-left: 0;
     padding-right: 0;
     gap: 5rem;
   }
-}
-@media screen and (max-width: 768px) {
-  main .stats .stats__left {
-    width: 100%;
-    gap: 4rem;
-  }
-  main .stats .stats__left div h3 {
-    font-size: 4rem;
-  }
-  main .stats .stats__left div p {
-    font-size: 2rem;
-  }
-  main .stats .stats__right .stats-desc {
-    gap: 3rem;
-  }
-  main .stats .stats__right .stats-desc div p {
-    font-size: 1.6rem;
-  }
-  main .stats .stats__right .stats-desc div p + p {
-    margin-top: 2.5rem;
-  }
   main .stats .stats__banner {
     width: 100vw;
   }
 }
-@media screen and (max-width: 480px) {
-  main .stats .stats__left {
+@media screen and (max-width: 768px) {
+  main .stats__left {
+    width: 100%;
+    gap: 4rem;
+  }
+  main .stats__left div h3 {
+    font-size: 4rem;
+  }
+  main .stats__left div p {
+    font-size: 2rem;
+  }
+  main .stats__right .stats-desc {
     gap: 3rem;
   }
-  main .stats .stats__left div h3 {
-    font-size: 3rem;
-  }
-  main .stats .stats__left div p {
+  main .stats__right .stats-desc div p {
     font-size: 1.6rem;
   }
-  main .stats .stats__right {
+  main .stats__right .stats-desc div p + p {
+    margin-top: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  main .stats__left {
+    gap: 3rem;
+  }
+  main .stats__left div h3 {
+    font-size: 3rem;
+  }
+  main .stats__left div p {
+    font-size: 1.6rem;
+  }
+  main .stats__right {
     margin-top: 3rem;
   }
-  main .stats .stats__right .stats-desc {
+  main .stats__right .stats-desc {
     flex-direction: column;
     padding: 3rem 3rem 4rem;
     gap: 5rem;
   }
-  main .stats .stats__right .stats-desc div p {
+  main .stats__right .stats-desc div p {
     font-size: 1.6rem;
   }
-  main .stats .stats__right .stats-desc div p + p {
+  main .stats__right .stats-desc div p + p {
     margin-top: 2.5rem;
-  }
-  main .stats .stats__banner {
-    width: 100vw;
   }
 }
 main .week-treending {
