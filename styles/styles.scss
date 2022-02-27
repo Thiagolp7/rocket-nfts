@@ -16,7 +16,6 @@ header {
     .container {
       @include utils.DisplayFlex(row, space-between, center);
       padding-top: 5rem;
-      gap: 5rem;
 
       position: relative;
     }
@@ -25,6 +24,7 @@ header {
       font-size: 4rem;
       font-weight: 700;
       white-space: nowrap;
+      margin-right: 5rem;
     }
 
     .nav {
@@ -32,6 +32,7 @@ header {
       max-width: 815px;
       width: 100%;
       gap: 3rem;
+      margin-left: auto;
 
       a {
         font-size: 1.8rem;
@@ -49,9 +50,10 @@ header {
         gap: 1.5rem;
 
         margin-left: auto;
+        margin-right: 1rem;
         padding: 1rem 1.5rem;
 
-        background: #fff;
+        background: #ffffff;
         font-size: 1.6rem;
         font-weight: 700;
         border: 0;
@@ -71,9 +73,50 @@ header {
       }
     }
 
+    .music-pause-btn {
+      width: 5rem;
+      height: 5rem;
+      background: transparent;
+      border: 0;
+      position: relative;
+
+      img {
+        width: 2.5rem;
+        width: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+      }
+
+      &::after {
+        transition: 0.3s ease;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0rem;
+        height: 0.39rem;
+        transform: translate(-50%, -50%) rotate(-135deg);
+        border-radius: 2.5rem;
+        background-color: colors.$color-logo;
+      }
+      &:hover,
+      &.active {
+        &::after {
+          width: 4rem;
+        }
+
+        img {
+          filter: brightness(0.9);
+        }
+      }
+    }
+
     .menu-hamburguer {
-      width: 40px;
-      height: 50px;
+      width: 4rem;
+      height: 5rem;
       border: 0;
       background: transparent;
       display: flex;
@@ -124,6 +167,7 @@ header {
           width: 0%;
         }
       }
+
       @keyframes rotateR {
         0% {
           position: absolute;
@@ -141,6 +185,7 @@ header {
           background-color: colors.$color-logo;
         }
       }
+
       @keyframes rotateL {
         0% {
           position: absolute;
@@ -165,7 +210,7 @@ header {
       }
     }
 
-    @media screen and (max-width: 940px) {
+    @media screen and (max-width: 1000px) {
       .logo {
         font-size: 3rem;
       }
@@ -180,7 +225,7 @@ header {
         top: 10rem;
         right: calc(3rem + 40px);
         border-radius: 5px;
-        background: #333;
+        background: colors.$card-color;
         gap: 0;
 
         display: none;
@@ -205,8 +250,6 @@ header {
           width: 100%;
           white-space: nowrap;
         }
-
-        transition: 2s ease;
 
         &.active {
           display: flex;
@@ -420,7 +463,7 @@ header {
       width: 30.7rem;
       height: 19.7rem;
 
-      border: solid 1px #fff;
+      border: solid 1px #ffffff;
     }
   }
 }
@@ -476,7 +519,7 @@ main {
               margin-top: 6.3rem;
 
               u {
-                color: #fff;
+                color: #ffffff;
               }
             }
           }
@@ -587,8 +630,6 @@ main {
     width: 100%;
     border-bottom: 1px solid colors.$subtitle-color;
 
-    // background-color: blue;
-
     .container {
       @include utils.DisplayFlex(column, center, center);
       padding-top: 16rem;
@@ -685,7 +726,7 @@ main {
 
           .card__desc {
             p {
-              color: #fff;
+              color: #ffffff;
             }
           }
 

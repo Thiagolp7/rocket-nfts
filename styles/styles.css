@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #ff5b50 #252525;
 }
 
 :root {
@@ -18,7 +20,7 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   color: #fff;
   background-color: #0e0e0e;
 }
@@ -56,6 +58,28 @@ u {
   padding: 0 3rem;
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ff5b50 #252525;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #252525;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff5b50;
+  border-radius: 10px;
+  border: 3px solid #252525;
+}
+
 header {
   width: 100%;
   background-image: url("../assets/background.png");
@@ -71,13 +95,13 @@ header .menu .container {
   justify-content: space-between;
   align-items: center;
   padding-top: 5rem;
-  gap: 5rem;
   position: relative;
 }
 header .menu .logo {
   font-size: 4rem;
   font-weight: 700;
   white-space: nowrap;
+  margin-right: 5rem;
 }
 header .menu .nav {
   display: flex;
@@ -87,6 +111,7 @@ header .menu .nav {
   max-width: 815px;
   width: 100%;
   gap: 3rem;
+  margin-left: auto;
 }
 header .menu .nav a {
   font-size: 1.8rem;
@@ -104,8 +129,9 @@ header .menu .nav button[type=button] {
   align-items: center;
   gap: 1.5rem;
   margin-left: auto;
+  margin-right: 1rem;
   padding: 1rem 1.5rem;
-  background: #fff;
+  background: #ffffff;
   font-size: 1.6rem;
   font-weight: 700;
   border: 0;
@@ -120,9 +146,43 @@ header .menu .nav button[type=button] img {
   width: 3rem;
   height: 3rem;
 }
+header .menu .music-pause-btn {
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border: 0;
+  position: relative;
+}
+header .menu .music-pause-btn img {
+  width: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+header .menu .music-pause-btn::after {
+  transition: 0.3s ease;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0rem;
+  height: 0.39rem;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  border-radius: 2.5rem;
+  background-color: #ff5b50;
+}
+header .menu .music-pause-btn:hover::after, header .menu .music-pause-btn.active::after {
+  width: 4rem;
+}
+header .menu .music-pause-btn:hover img, header .menu .music-pause-btn.active img {
+  filter: brightness(0.9);
+}
 header .menu .menu-hamburguer {
-  width: 40px;
-  height: 50px;
+  width: 4rem;
+  height: 5rem;
   border: 0;
   background: transparent;
   display: flex;
@@ -253,7 +313,7 @@ header .menu .menu-hamburguer.active div:nth-child(3) {
     background-color: #ff5b50;
   }
 }
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1000px) {
   header .menu .logo {
     font-size: 3rem;
   }
@@ -267,10 +327,9 @@ header .menu .menu-hamburguer.active div:nth-child(3) {
     top: 10rem;
     right: calc(3rem + 40px);
     border-radius: 5px;
-    background: #333;
+    background: #252525;
     gap: 0;
     display: none;
-    transition: 2s ease;
   }
   header .menu .nav a {
     width: 100%;
@@ -527,7 +586,7 @@ header .galery {
 header .galery img {
   width: 30.7rem;
   height: 19.7rem;
-  border: solid 1px #fff;
+  border: solid 1px #ffffff;
 }
 
 main {
@@ -587,7 +646,7 @@ main .stats__right .stats-desc div p + p {
   margin-top: 6.3rem;
 }
 main .stats__right .stats-desc div p + p u {
-  color: #fff;
+  color: #ffffff;
 }
 main .stats__right .stats__banner {
   width: 100%;
@@ -754,7 +813,7 @@ main .week-treending .card-container .card:hover .card__title img {
   filter: initial;
 }
 main .week-treending .card-container .card:hover .card__desc p {
-  color: #fff;
+  color: #ffffff;
 }
 main .week-treending .card-container .card:hover .card__img img {
   transform: scale(1.2);
