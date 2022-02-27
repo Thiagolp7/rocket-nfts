@@ -16,7 +16,6 @@ header {
     .container {
       @include utils.DisplayFlex(row, space-between, center);
       padding-top: 5rem;
-
       position: relative;
     }
 
@@ -25,6 +24,10 @@ header {
       font-weight: 700;
       white-space: nowrap;
       margin-right: 5rem;
+
+      @media screen and (max-width: 480px) {
+        margin-right: 0;
+      }
     }
 
     .nav {
@@ -75,7 +78,7 @@ header {
 
     .music-pause-btn {
       width: 5rem;
-      height: 5rem;
+      height: 4rem;
       background: transparent;
       border: 0;
       position: relative;
@@ -97,20 +100,25 @@ header {
         top: 50%;
         left: 50%;
         width: 0rem;
-        height: 0.39rem;
-        transform: translate(-50%, -50%) rotate(-135deg);
+        height: 0.3rem;
+        transform: translate(-50%, -50%) rotate(-130deg);
         border-radius: 2.5rem;
         background-color: colors.$color-logo;
       }
       &:hover,
       &.active {
         &::after {
-          width: 4rem;
+          width: 3rem;
         }
 
         img {
           filter: brightness(0.9);
         }
+      }
+
+      @media screen and (max-width: 1000px) {
+        margin-left: auto;
+        margin-right: 5px;
       }
     }
 

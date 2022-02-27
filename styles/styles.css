@@ -103,6 +103,11 @@ header .menu .logo {
   white-space: nowrap;
   margin-right: 5rem;
 }
+@media screen and (max-width: 480px) {
+  header .menu .logo {
+    margin-right: 0;
+  }
+}
 header .menu .nav {
   display: flex;
   flex-direction: row;
@@ -148,7 +153,7 @@ header .menu .nav button[type=button] img {
 }
 header .menu .music-pause-btn {
   width: 5rem;
-  height: 5rem;
+  height: 4rem;
   background: transparent;
   border: 0;
   position: relative;
@@ -169,16 +174,22 @@ header .menu .music-pause-btn::after {
   top: 50%;
   left: 50%;
   width: 0rem;
-  height: 0.39rem;
-  transform: translate(-50%, -50%) rotate(-135deg);
+  height: 0.3rem;
+  transform: translate(-50%, -50%) rotate(-130deg);
   border-radius: 2.5rem;
   background-color: #ff5b50;
 }
 header .menu .music-pause-btn:hover::after, header .menu .music-pause-btn.active::after {
-  width: 4rem;
+  width: 3rem;
 }
 header .menu .music-pause-btn:hover img, header .menu .music-pause-btn.active img {
   filter: brightness(0.9);
+}
+@media screen and (max-width: 1000px) {
+  header .menu .music-pause-btn {
+    margin-left: auto;
+    margin-right: 5px;
+  }
 }
 header .menu .menu-hamburguer {
   width: 4rem;
