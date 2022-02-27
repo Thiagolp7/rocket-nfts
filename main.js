@@ -1,8 +1,8 @@
 // ***** This control the music
 const musciPauseBtn = document.querySelector('#music-pause-btn')
-const music = document.querySelector('#audio')
+const music = document.querySelector('#audio-player')
 
-music.play()
+// music.play()
 music.volume = 0.3
 let musicIsPlaying = true
 
