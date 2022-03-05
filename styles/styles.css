@@ -179,10 +179,10 @@ header .menu .music-pause-btn::after {
   border-radius: 2.5rem;
   background-color: #ff5b50;
 }
-header .menu .music-pause-btn:hover::after, header .menu .music-pause-btn.active::after {
+header .menu .music-pause-btn.active::after {
   width: 3rem;
 }
-header .menu .music-pause-btn:hover img, header .menu .music-pause-btn.active img {
+header .menu .music-pause-btn.active img {
   filter: brightness(0.9);
 }
 @media screen and (max-width: 1000px) {
@@ -191,9 +191,17 @@ header .menu .music-pause-btn:hover img, header .menu .music-pause-btn.active im
     margin-right: 5px;
   }
 }
+@media screen and (min-width: 1000px) {
+  header .menu .music-pause-btn:hover::after, header .menu .music-pause-btn.active::after {
+    width: 3rem;
+  }
+  header .menu .music-pause-btn:hover img, header .menu .music-pause-btn.active img {
+    filter: brightness(0.9);
+  }
+}
 header .menu .menu-hamburguer {
-  width: 4rem;
-  height: 5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 0;
   background: transparent;
   display: flex;
@@ -216,7 +224,7 @@ header .menu .menu-hamburguer div:nth-child(3) {
   width: 40%;
 }
 header .menu .menu-hamburguer div + div {
-  margin-top: 6px;
+  margin-top: 4px;
 }
 header .menu .menu-hamburguer.active div:nth-child(2) {
   -webkit-animation: disapear 0.5s forwards;
