@@ -623,7 +623,7 @@ header .galery .container div:hover {
   border-color: #ff5b50;
 }
 header .galery .container div:hover img {
-  transform: scale(1.1) translate(15px, -10px);
+  transform: scale(1.1);
 }
 @media screen and (max-width: 689px) {
   header .galery .container {
