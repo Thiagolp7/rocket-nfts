@@ -20,6 +20,7 @@ function musicTogglePause() {
 musciPauseBtn.addEventListener('click', musicTogglePause)
 // *********************************************************
 
+// ***** Menu hamburguer controls
 const navMenu = document.querySelector('#nav')
 const menuBtn = document.querySelector('#menu-hamburguer')
 
@@ -29,3 +30,4 @@ function toggleMenu() {
 }
 
 menuBtn.addEventListener('click', toggleMenu)
+// *********************************************************
